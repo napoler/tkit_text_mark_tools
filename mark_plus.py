@@ -26,17 +26,16 @@ def run():
     for item in search_content(keyword):
         text=item.title+"\n"+item.content
         text_list.append(text)
+    print("获取数据:",len(text_list))
     if len(c_list)==0:
         n= input("输入新建标签:")
         c_list[len(c_list)]=n
         save_labels(c_list)
     try:
-        pre=auto_train([text],marked_text,marked_label,tokenizer,model,n_neighbors=len(c_list))
+        pre=auto_train(text_list,marked_text,marked_label,tokenizer,model,n_neighbors=len(c_list))
     except:
         pre=len(text_list)*[-1]
-
-    # pre=auto_train(text_list,marked_text,marked_label,tokenizer,model,n_neighbors=len(c_list)+1)
-    # print(pre)
+    
     for i,p in enumerate(pre):
         # print(type(p))
         # print("句子：",new_text_list[i])
@@ -113,5 +112,7 @@ def run():
 
 while True:
 
+    print("###"*20)
+    print("\n"*5)
     print("###"*20)
     run()
