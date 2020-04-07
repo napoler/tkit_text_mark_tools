@@ -1,0 +1,14 @@
+matplotlib==3.2.0
+numpy==1.18.1
+fire==0.2.1
+kmeans_pytorch==0.3
+pymongo==3.10.1
+tqdm==4.38.0
+torch==1.4.0
+harvesttext==0.5.4.2
+transformers==2.4.1
+elasticsearch_dsl==7.1.0
+elasticsearch==7.6.0
+scikit_learn==0.22.2.post1
+tkitFile==0.0.1.2
+tkitText==0.0.1.5
