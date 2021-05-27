@@ -21,8 +21,12 @@ def run():
     text_list=[]
     try:
         marked_text,marked_label=bulid_t_data(mjson)
+        # print(marked_text[:2],marked_label[:2])
     except:
         pass
+    # for it in marked_text:
+    #     print(len(it))
+    # print(len(marked_text),len(marked_label))
     for item in search_content(keyword):
         text=item.title+"\n"+item.content
         text_list.append(text)
@@ -32,10 +36,11 @@ def run():
         c_list[len(c_list)]=n
         save_labels(c_list)
     try:
+        
         pre=auto_train(text_list,marked_text,marked_label,tokenizer,model,n_neighbors=len(c_list))
     except:
         pre=len(text_list)*[-1]
-    
+    print("text_list",text_list[:2])
     for i,p in enumerate(pre):
         # print(type(p))
         # print("句子：",new_text_list[i])
@@ -69,47 +74,6 @@ def run():
 
             except:
                 pass
-
-
-
-
-
-
-
-
-
-    # print("标签信息:",c_list)
-    # print("*"*20)
-    # c = input("输入对应标签(新建输入n):")
-    # if c=="n":
-    #         n= input("输入新建标签:")
-    #         c_list[len(c_list)]=n
-    #         save_labels(c_list)
-    #         one={"label":len(c_list)-1,'sentence':text}
-    #         print(one)
-    #         mjson.save([one]) 
-    # else:
-    #     try:
-    #         # c=int(c)
-    #         # print(c)
-    #         if c_list.get(str(c)):
-    #             one={"label":int(c),'sentence':text}
-    #             print(one)
-    #             mjson.save([one])
-    #         # elif int(c)>=0:
-    #         #     c_l= input("11输入新建标签:")
-    #         #     if len(c_l)>0:
-    #         #         c_list[len(c_list)]=c_l
-    #         #         save_labels(c_list)
-    #         #         one={"label":int(c),'sentence':it}
-    #         #         mjson.save([one])
-    #         # data.append
-    #     except:
-    #         pass
-
-
-
-
 while True:
 
     print("###"*20)
