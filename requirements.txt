@@ -1,5 +1,5 @@
 matplotlib==3.2.0
-numpy==1.18.1
+numpy==1.22.0
 fire==0.2.1
 kmeans_pytorch==0.3
 pymongo==3.10.1
