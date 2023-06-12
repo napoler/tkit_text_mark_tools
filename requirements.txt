@@ -6,7 +6,7 @@ pymongo==3.10.1
 tqdm==4.38.0
 torch==1.4.0
 harvesttext==0.5.4.2
-transformers==2.4.1
+transformers==4.30.0
 elasticsearch_dsl==7.1.0
 elasticsearch==7.6.0
 scikit_learn==0.22.2.post1
